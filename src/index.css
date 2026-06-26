@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg-light: #F1F6F4;
+  --color-surface-light: #D9E8E2;
+  --color-primary-accent: #FFC801;
+  --color-secondary-accent: #FF9932;
+  --color-dark-primary: #114C5A;
+  --color-dark-surface: #172B36;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Base Body Styles */
+html {
+  scroll-behavior: smooth;
+  background-color: #172B36;
+}
+
+/* Selection Highlight */
+::selection {
+  background-color: #FFC801;
+  color: #114C5A;
+}
+
+/* Animations Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseBorder {
+  0%, 100% { border-color: rgba(255, 200, 1, 0.2); }
+  50% { border-color: rgba(255, 200, 1, 0.7); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes floatParticle {
+  0% { transform: translateY(0px) translateX(0px) rotate(0deg); opacity: 0.2; }
+  50% { transform: translateY(-40px) translateX(15px) rotate(180deg); opacity: 0.6; }
+  100% { transform: translateY(-80px) translateX(-5px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes textGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Custom Animation Classes (GPU-Accelerated) */
+.animate-fade-in {
+  animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.pulse-border {
+  animation: pulseBorder 3.5s infinite ease-in-out;
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Premium Background Particle System */
+.particle-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background-color: #FFC801;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.particle-1 { width: 4px; height: 4px; left: 15%; bottom: 10%; animation: floatParticle 8s infinite linear; }
+.particle-2 { width: 6px; height: 6px; left: 45%; bottom: 15%; animation: floatParticle 11s infinite linear 2s; }
+.particle-3 { width: 3px; height: 3px; left: 75%; bottom: 8%; animation: floatParticle 9s infinite linear 1s; }
+.particle-4 { width: 5px; height: 5px; left: 90%; bottom: 20%; animation: floatParticle 13s infinite linear 3s; }
+.particle-5 { width: 4px; height: 4px; left: 30%; bottom: 5%; animation: floatParticle 10s infinite linear 4s; }
+
+/* Grid Background System */
+.grid-bg-light {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(217, 232, 226, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(217, 232, 226, 0.03) 1px, transparent 1px);
+}
+
+.grid-bg-dark {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(217, 232, 226, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(217, 232, 226, 0.05) 1px, transparent 1px);
+}
+
+/* Premium Marquee Track */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  position: relative;
+}
+
+.marquee-container::before,
+.marquee-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, #172B36, transparent);
+}
+
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, #172B36, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Glow Effects */
+.glow-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 200, 1, 0.2),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+.glow-btn:hover::after {
+  left: 100%;
+}
+
+/* Perfect Sharp Border grid */
+.bento-card-active {
+  box-shadow: 0 0 30px rgba(17, 76, 90, 0.06);
+}
+
+/* Custom Web Scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Isolated DOM Price Update Keyframe Animation */
+@keyframes priceChange {
+  0% {
+    opacity: 0.3;
+    transform: translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-price-change {
+  animation: priceChange 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* High Fidelity Terminal Utilities */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.animate-cursor-blink {
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes scanlineMove {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+.scanline-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0,0,0,0.12) 50%,
+    rgba(0,0,0,0.12)
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.scanline-sweep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(212, 163, 89, 0), rgba(212, 163, 89, 0.04) 50%, rgba(212, 163, 89, 0) 100%);
+  pointer-events: none;
+  z-index: 6;
+  animation: scanlineMove 8s linear infinite;
+}
+
+@keyframes pulseTerminal {
+  0%, 100% {
+    box-shadow: 0 0 15px -3px rgba(212, 163, 89, 0.05), inset 0 0 0 1px rgba(212, 163, 89, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 25px -1px rgba(212, 163, 89, 0.12), inset 0 0 0 1px rgba(212, 163, 89, 0.1);
+  }
+}
+.terminal-glow-container {
+  animation: pulseTerminal 4s ease-in-out infinite;
+}
