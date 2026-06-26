@@ -1,20 +1,120 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# AetherFlow
 
-# Run and deploy your AI Studio app
+AetherFlow is a premium AI-powered SaaS landing page built for a frontend engineering hackathon. The project demonstrates modern frontend architecture, dynamic pricing, responsive layouts, semantic HTML, and performance-focused UI development.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/7191cf21-35a4-41ba-b5cc-e3a581ed429c
+- Premium AI SaaS landing page
+- Dynamic multi-currency pricing (INR, USD, EUR)
+- Monthly and Annual billing toggle
+- Matrix-driven pricing configuration
+- Responsive Bento Grid layout
+- Mobile Accordion layout
+- CSS-only animations and transitions
+- Semantic HTML structure
+- SEO-friendly architecture
+- Fully responsive design
+- Accessibility-focused UI
+- Organizer SVG asset integration
 
-## Run Locally
+## Tech Stack
 
-**Prerequisites:**  Node.js
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- CSS Transitions
+- CSS Keyframes
+- Web Animations API
 
+## Project Structure
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```text
+app/
+components/
+components/icons/
+lib/
+public/
+styles/
+```
+
+## Core Features
+
+### Matrix-Driven Pricing
+
+- Dynamic pricing calculation
+- Multi-currency support
+- Monthly and Annual billing
+- Annual discount handling
+- Configuration-based pricing engine
+
+### Responsive Layout
+
+- Desktop Bento Grid
+- Mobile Accordion
+- Responsive breakpoints
+- Smooth layout transitions
+
+### Performance
+
+- Optimized rendering
+- Lightweight animations
+- Responsive component architecture
+- Clean UI interactions
+
+## Design System
+
+### Typography
+
+- JetBrains Mono
+- Inter
+
+### Color Palette
+
+- Arctic Powder
+- Mystic Mint
+- Forsythia
+- Deep Saffron
+- Nocturnal Expedition
+- Oceanic Noir
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/TheAfnan/aetherflow.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+## Live Demo
+
+https://your-vercel-link.vercel.app
+
+## License
+
+This project was developed as a frontend hackathon submission and is intended for educational and demonstration purposes.
+
+## Author
+
+Mohd Afnan
+
+GitHub: https://github.com/TheAfnan
+
